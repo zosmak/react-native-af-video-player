@@ -1,7 +1,18 @@
-import React, { Component } from "react"
-import PropTypes from "prop-types"
-import { View, Animated, StyleSheet, TouchableWithoutFeedback as Touchable } from "react-native"
-import { PlayButton, ControlBar, Loading, TopBar, ProgressBar } from "./"
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import {
+  View,
+  Animated,
+  StyleSheet,
+  TouchableWithoutFeedback as Touchable
+} from 'react-native'
+import {
+  PlayButton,
+  ControlBar,
+  Loading,
+  TopBar,
+  ProgressBar
+} from './'
 
 const styles = StyleSheet.create({
   container: {
@@ -180,6 +191,7 @@ Controls.propTypes = {
   paused: PropTypes.bool.isRequired,
   inlineOnly: PropTypes.bool.isRequired,
   hideFullScreenControl: PropTypes.bool.isRequired,
+  fullscreen: PropTypes.bool.isRequired,
   muted: PropTypes.bool.isRequired,
   more: PropTypes.bool.isRequired,
   loading: PropTypes.bool.isRequired,
@@ -187,6 +199,7 @@ Controls.propTypes = {
   currentTime: PropTypes.number.isRequired,
   duration: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
+  logo: PropTypes.string.isRequired,
   theme: PropTypes.object.isRequired
 }
 
