@@ -1,18 +1,7 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import {
-  View,
-  Animated,
-  StyleSheet,
-  TouchableWithoutFeedback as Touchable
-} from 'react-native'
-import {
-  PlayButton,
-  ControlBar,
-  Loading,
-  TopBar,
-  ProgressBar
-} from './'
+import React, { Component } from "react"
+import PropTypes from "prop-types"
+import { View, Animated, StyleSheet, TouchableWithoutFeedback as Touchable } from "react-native"
+import { PlayButton, ControlBar, Loading, TopBar, ProgressBar } from "./"
 
 const styles = StyleSheet.create({
   container: {
