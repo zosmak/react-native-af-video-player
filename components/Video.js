@@ -376,14 +376,12 @@ class Video extends Component {
         style={[
           styles.background,
           isFullScreen
-            ? fullScreen
-              ? (styles.fullScreen, { height: this.animFullscreen })
-              : { height: this.animInline }
+            ? (styles.fullScreen, { height: this.animFullscreen })
             : { height: this.animInline },
-          fullScreen ? null : style
+          isFullScreen ? null : style
         ]}
       >
-        <StatusBar hidden={fullScreen} />
+        <StatusBar hidden={isFullScreen} />
         {((loading && placeholder) || currentTime < 0.01) && (
           <Image resizeMode="cover" style={styles.image} {...checkSource(placeholder)} />
         )}
@@ -392,7 +390,7 @@ class Video extends Component {
           paused={paused}
           resizeMode={resizeMode}
           repeat={loop}
-          style={isFullScreen ? (fullScreen ? styles.fullScreen : inline) : inline}
+          style={isFullScreen ? styles.fullScreen : inline}
           ref={ref => {
             this.player = ref
           }}
@@ -419,7 +417,7 @@ class Video extends Component {
           togglePlay={() => this.togglePlay()}
           paused={paused}
           muted={muted}
-          fullscreen={isFullScreen ? (fullScreen ? fullScreen : false) : false}
+          fullscreen={isFullScreen}
           loading={loading}
           onSeek={val => this.seek(val)}
           onSeekRelease={pos => this.onSeekRelease(pos)}
